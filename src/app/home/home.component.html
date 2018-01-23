@@ -1,0 +1,26 @@
+	<h1>
+	  Welcome Home!
+	</h1>
+
+	<h3>Total Goals: {{goalCount}}</h3>
+	<table class="table">
+		<thead>
+			<th>Add Goal</th>
+			<th>My Goals</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<form>
+						<input type="text" name="goal" [(ngModel)]="goalText">
+						<input type="submit" name="Add" (click)="addGoal()">
+					</form>
+				</td>
+				<td>
+					<p style="background: blue;" *ngFor="let goal of goals; let i = index" (click)="removeGoal(i)">
+						{{goal}}
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>

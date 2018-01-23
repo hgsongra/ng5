@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Apple';
+  logo = 'https://ww2.kqed.org/pop/wp-content/uploads/sites/12/2015/04/the-avengers.jpg';
 }
