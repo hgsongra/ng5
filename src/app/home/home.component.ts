@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-	goals = [];
+	goals = ["My First Goal", "Crazy Goal"];
 	goalCount: number;
-	goalText: string = 'Sample Goal!';
+	goalText: string = '';
 
   constructor() { }
 

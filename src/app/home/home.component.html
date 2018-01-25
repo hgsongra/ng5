@@ -1,25 +1,37 @@
 	<h1>
-	  Welcome Home!
+	  Welcome to Goal Setter!
 	</h1>
 
-	<h3>Total Goals: {{goalCount}}</h3>
+	<div class="row">
+		<div class="col-md-6">
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text" class="form-control" name="goal" [(ngModel)]="goalText" placeholder="Enter your goal!">
+				</div>
+				<button type="submit" class="btn btn-success mx-2" (click)="addGoal()">Add+</button>
+			</form>
+		</div>
+		<div class="col-md-6">
+			<h3>Total Goals: {{goalCount}}</h3>
+		</div>
+	</div>
+
 	<table class="table">
-		<thead>
-			<th>Add Goal</th>
-			<th>My Goals</th>
+		<thead class="thead-light">
+			<tr>
+				<th>SR#</th>
+				<th>Goal Name</th>
+				<th>Action</th>
+			</tr>
 		</thead>
 		<tbody>
-			<tr>
+			<tr *ngFor="let goal of goals; let i = index">
+				<td>{{i+1}}</td>
 				<td>
-					<form>
-						<input type="text" name="goal" [(ngModel)]="goalText">
-						<input type="submit" name="Add" (click)="addGoal()">
-					</form>
+					<strong>{{ goal }}</strong>
 				</td>
 				<td>
-					<p style="background: blue;" *ngFor="let goal of goals; let i = index" (click)="removeGoal(i)">
-						{{goal}}
-					</p>
+					<a href="#" class="btn btn-danger" (click)="removeGoal(i)">Remove</a>
 				</td>
 			</tr>
 		</tbody>
